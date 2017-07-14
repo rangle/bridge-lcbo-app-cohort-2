@@ -10,12 +10,15 @@
     "react-scripts": "1.0.10"
   },
   "engines": {
-    "node": "8.1.x"
+    "node": "7.10.x"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "server": "node server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint src",
+    "pretest": "npm run lint",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

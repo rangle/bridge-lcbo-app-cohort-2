@@ -34,5 +34,5 @@ app.listen(port, err => {
     throw err;
   }
 
-  console.log(`API Server listening on port ${port}`);
+  console.log(`🖥️  Server listening on port ${port}`);
 });
