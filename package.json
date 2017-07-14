@@ -23,6 +23,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^4.2.0"
+    "eslint": "^4.2.0",
+    "eslint-config-react-app": "^1.0.5"
   }
 }
