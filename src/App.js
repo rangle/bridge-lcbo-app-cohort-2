@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Rx from 'rxjs/Rx'; //maddie: we might not need this import here
+import 'rxjs'; 
 
 
 class App extends Component {
