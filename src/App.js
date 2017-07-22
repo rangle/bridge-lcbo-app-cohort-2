@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import 'rxjs'; 
+import 'rxjs';
 
+import ProductList from './components/ProductList';
 
 class App extends Component {
   render() {
@@ -12,12 +13,22 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ProductList {...fakeProps} />
       </div>
     );
   }
 }
 
 export default App;
+
+//fake props for rendering
+//should be deleted once we integrate list component with redux store
+const fakeProps = {
+  productList: [{
+    name: 'tester',
+    price_in_cents: 374,
+    package: 'test',
+    image_thumb_url: 'test.com',
+    id: 12,
+  }],
+}
