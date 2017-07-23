@@ -1,6 +1,5 @@
 import { WISHLIST_ACTIONS } from '../actions/wishlist.actions'
 
-
 export const wishlistIsVisible = (state = false, action) => {
   switch(action.type) {
      case WISHLIST_ACTIONS.OPEN_PANEL:
