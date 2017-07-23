@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import './App.css';
 import 'rxjs';
 
@@ -7,13 +8,26 @@ import Header from './components/Header';
 import ProductList from './components/ProductList';
 import WishlistPanel from './components/WishlistPanel';
 
+const intialState = {
+  searchString: '',
+  products: [],
+  orders: [],
+}
+
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = intialState
+  }
+
   render() {
-    const { wishlistIsVisible, onClickClosePanel, onClickShoppingCartLogo } = this.props;
+    const { wishlistIsVisible, onClickClosePanel, onClickShoppingCartLogo,  getResults} = this.props;
 
     return (
       <div className="App">
+        <button onClick={ () => getResults() // TODO: use searchString when that exists
+        }>Get Sample Data</button>
         <Header onClickShoppingCartLogo={onClickShoppingCartLogo}/>
         <WishlistPanel fakeProps={fakeProps} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
         <ProductList {...fakeProps} />
@@ -34,5 +48,6 @@ const fakeProps = {
     id: 12,
   }],
 }
+
 
 export default App;
