@@ -1,7 +1,6 @@
 import React from 'react'
 
-const SearchBar = (props) => {
-	console.log("SEARCH BAR PROPS", props)
+const SearchBar = props => {
 	return (
 		<form onSubmit={event => {
 						event.preventDefault()
