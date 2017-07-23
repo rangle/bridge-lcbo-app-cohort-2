@@ -1,14 +1,15 @@
 import React from 'react';
 import Product from '../Product';
 
-const ProductList = props => {
+const WishList = props => {
   let products;
 
-    if (!props.productList) {
-      return null;
-    } else {
-    products = props.productList.length > 0
-    ? props.productList.map(product => <Product
+  if (!props.wishList) {
+    return null;
+  } else {
+
+    products = props.wishList.length > 0
+    ? props.wishList.map(product => <Product
       key={product.id}
       {...product}
       addToWishList={props.addToWishList}
@@ -21,7 +22,7 @@ const ProductList = props => {
           {products}
         </ul>
       );
-    }
+  }
 };
 
-export default ProductList;
+export default WishList;
