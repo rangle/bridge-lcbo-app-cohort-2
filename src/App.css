@@ -7,75 +7,11 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 250px;
-  padding: 20px;
-  color: white;
-}
-
 .App-intro {
   font-size: large;
 }
 
-#text-input {
-  margin-top: 100px;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 ul {
   list-style: none;
-}
-
-#shopping-cart-logo {
-
-  top: 20px;
-  right: 30px;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-}
-
-#shopping-cart-logo:hover {
-  -ms-transform: scale(1.1, 1.1); /* IE 9 */
-   -webkit-transform: scale(1.1, 1.1); /* Safari */
-   transform: scale(1.1, 1.1);
-}
-
-#flyoutPanel {
-    width: 30vw;
-    height: 100vh;
-    background-color: #ECECEC;
-    position: fixed;
-    top: 0;
-    right: 0;
-    transform: translate3d(130vw, 0, 0);
-    transition: transform .3s cubic-bezier(0, .52, 0, 1);
-    overflow: scroll;
-    z-index: 1000;
-}
-
-#close_button {
-  display: block;
-  left: 30px;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin-top: 40px;
-}
-
-#close_button:hover {
-  -ms-transform: scale(1.2, 1.2); /* IE 9 */
-   -webkit-transform: scale(1.2, 1.2); /* Safari */
-   transform: scale(1.2, 1.2);
-}
-
-
-#wishlist-header {
-  margin-left: 30px;
-  text-align: left;
 }

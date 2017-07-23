@@ -1,0 +1,35 @@
+
+
+.flyoutPanel {
+    width: 30vw;
+    height: 100vh;
+    background-color: #ECECEC;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate3d(130vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    overflow: scroll;
+    z-index: 1000;
+}
+
+.close_button {
+  display: block;
+  left: 30px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 40px;
+}
+
+.close_button:hover {
+  -ms-transform: scale(1.2, 1.2); /* IE 9 */
+   -webkit-transform: scale(1.2, 1.2); /* Safari */
+   transform: scale(1.2, 1.2);
+}
+
+
+.wishlist-header {
+  margin-left: 30px;
+  text-align: left;
+}
