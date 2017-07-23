@@ -9,13 +9,17 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 250px;
   padding: 20px;
   color: white;
 }
 
 .App-intro {
   font-size: large;
+}
+
+#text-input {
+  margin-top: 100px;
 }
 
 @keyframes App-logo-spin {
@@ -42,6 +46,19 @@ ul {
    transform: scale(1.1, 1.1);
 }
 
+#flyoutPanel {
+    width: 30vw;
+    height: 100vh;
+    background-color: #ECECEC;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate3d(130vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    overflow: scroll;
+    z-index: 1000;
+}
+
 #close_button {
   display: block;
   left: 30px;
@@ -58,15 +75,7 @@ ul {
 }
 
 
-#flyoutPanel {
-    width: 30vw;
-    height: 100vh;
-    background-color: #ECECEC;
-    position: fixed;
-    top: 0;
-    right: 0;
-    transform: translate3d(130vw, 0, 0);
-    transition: transform .3s cubic-bezier(0, .52, 0, 1);
-    overflow: scroll;
-    z-index: 1000;
+#wishlist-header {
+  margin-left: 30px;
+  text-align: left;
 }

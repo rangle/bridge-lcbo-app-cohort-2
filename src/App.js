@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { openWishlistPanel, closeWishlistPanel } from './redux/actions/wishlist.actions';
-import shopping_cart from './img/shopping_cart.svg';
 import './App.css';
 import 'rxjs';
 

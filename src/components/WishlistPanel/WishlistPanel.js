@@ -15,8 +15,8 @@ const WishlistPanel = ({wishlistIsVisible, onClickClosePanel, fakeProps}) => (
         <div id="flyoutPanel" style={{
                 transform: "translate3d(" + x + "vw, 0vw, 0)"
               }}>
-          <img src={close_button} id="close_button" onClick={ () => onClickClosePanel()} />
-          <h2>Wishlist ({fakeProps.productList.length})</h2>
+          <img src={close_button} id="close_button" alt="close panel button" onClick={ () => onClickClosePanel()} />
+          <h2 id="wishlist-header">Wishlist ({fakeProps.productList.length})</h2>
           <ProductList {...fakeProps} />
           <button>Find stores</button>
         </div>
