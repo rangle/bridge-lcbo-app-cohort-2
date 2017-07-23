@@ -14,7 +14,7 @@ export const getAPIResults = (searchString) => {
 
 export const sendAPIResults = (productsList) => {
   //goes to the epic
-  console.log('sendAPIResults')
+  // console.log('sendAPIResults', productsList)
   return ({
   type: SEND_API_RESULTS,
   payload: productsList

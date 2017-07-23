@@ -29,8 +29,9 @@ class App extends Component {
         <button onClick={ () => getResults() // TODO: use searchString when that exists
         }>Get Sample Data</button>
         <Header onClickShoppingCartLogo={onClickShoppingCartLogo}/>
-        <WishlistPanel fakeProps={fakeProps} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
-        <ProductList {...fakeProps} />
+        <WishlistPanel fakeProps={ fakeProps } wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
+        <ProductList productList={this.props.products}  />
+        {/* {...fakeProps} */}
       </div>
     );
   }
