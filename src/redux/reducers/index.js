@@ -1,5 +1,7 @@
 import { routerReducer } from 'react-router-redux'
 import { wishlistIsVisible } from './wishlist.reducer';
+import header from './header.reducer';
+
 
 import combineReducers from 'redux/es/combineReducers';
 
@@ -19,5 +21,6 @@ export const productsReducer = (state = [], action) => {
 export default combineReducers({
     routing: routerReducer,
     products: productsReducer,
+    searchString: header,
     wishlistIsVisible: wishlistIsVisible
 });

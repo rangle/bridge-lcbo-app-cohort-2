@@ -22,21 +22,22 @@ class App extends Component {
   }
 
   render() {
-    const { wishlistIsVisible, onClickClosePanel, onClickShoppingCartLogo,  getResults} = this.props;
+    const { wishlistIsVisible,
+            onClickClosePanel,
+            onClickShoppingCartLogo,
+            updateSearchText,
+            getResults,
+            searchString } = this.props;
 
     return (
       <div className="App">
-        <button onClick={ () => getResults() // TODO: use searchString when that exists
-        }>Get Sample Data</button>
-        <Header onClickShoppingCartLogo={onClickShoppingCartLogo}/>
-        <WishlistPanel fakeProps={ fakeProps } wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
-        <ProductList productList={this.props.products}  />
-        {/* {...fakeProps} */}
+        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getAlcoholList={getResults(searchString)} updateSearchText={updateSearchText} searchString={searchString}/>
+        <WishlistPanel fakeProps={fakeProps} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
+        <ProductList productList={this.props.products} />
       </div>
     );
   }
 }
-
 
 //fake props for rendering
 //should be deleted once we integrate list component with redux store
