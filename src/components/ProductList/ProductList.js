@@ -4,7 +4,7 @@ import Product from '../Product';
 const ProductList = props => {
   let products;
 
-  props.productList.length > 0
+  props.productList && props.productList.length > 0
   ? products = props.productList.map(product => <Product {...product} key={product.id} />)
   : products = <h2>No results.</h2>
 
