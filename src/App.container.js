@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { openWishlistPanel, closeWishlistPanel } from './redux/actions/wishlist.actions';
 import { addProductToWishList, removeProductFromWishList } from './redux/actions/product.actions';
-import { updateSearchText, getAlcoholList } from './redux/actions/header.actions';
+import { updateSearchText } from './redux/actions/header.actions';
 import { getAPIResults } from './redux/actions/index';
 
 const mapStateToProps = state => {
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => {
   updateSearchText,
   addToWishList: addProductToWishList,
   removeFromWishList: removeProductFromWishList,
-  // getAlcoholList
+  getResults: getAPIResults
 }, dispatch)
 }
 
