@@ -23,15 +23,4 @@ const mapDispatchToProps = (dispatch) => {
   	getResults: getAPIResults }, dispatch)
 }
 
-// const actions = {
-//   onClickShoppingCartLogo: openWishlistPanel,
-//   onClickClosePanel: closeWishlistPanel,
-//   updateSearchText,
-//   getResults: getAPIResults, // !!! import from action properly
-// }
-
-
-
-// export default connect(mapStateToProps, actions)(App);
-
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -8,7 +8,7 @@ import Header from './components/Header';
 import ProductList from './components/ProductList';
 import WishlistPanel from './components/WishlistPanel';
 
-const intialState = {
+const initialState = {
   searchString: '',
   products: [],
   orders: [],
@@ -18,7 +18,7 @@ const intialState = {
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = intialState
+    this.state = initialState
   }
 
   render() {
