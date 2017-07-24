@@ -1,67 +1,21 @@
 import { combineEpics } from "redux-observable";
-// import { $ } from '../../node_modules/jQuery/lib/node-jquery';
-// import $ from 'jquery';
 import { GET_API_RESULTS, sendAPIResults } from "../redux/actions";
-import axios from 'axios'
-var fetchProducts
 
 
+const LCBO_access_key = 'MDo4OTc1NDY4Ni03MDAzLTExZTctOTNkNS04ZmJjMjZkMWQ2NTE6cHFlN3BwUEtzaDJ6aUpidHU4QnZTOU1RODVUSFZVd0RhRUc5'
 
+export const fetchProducts = () => fetch(`http://lcboapi.com/products?access_key=${LCBO_access_key}`)
+.then(res => res.json())
+.then(res => res.result)
+.catch(e => {console.log('request failed', e);
+return sampleData});
 
-
-// require("jsdom").env("", function(err, window) {
-//     if (err) {
-//         console.error(err);
-//         return;
-//     }
-//
-//     var $ = require("../../node_modules/jQuery/lib/node-jquery")(window);
-
-
-const LCBO_access_key =
-  "Token MDoyODdhM2Q2OC02ZGI2LTExZTctOGUxNy0yZjI2ZmZkNWQwYTQ6Q3hxODRJdVpTdlA5cEUzTmgwRmhUWWpJalRnWXpOOEFQbEZ";
-
-const myHeaders = new Headers();
-// myHeaders.append("Access-Control-Allow-Origin", '*')
-// myHeaders.append("Authorization", LCBO_access_key);
-
-// myHeaders.Access-Control-Allow-Origin='*'
-
- fetchProducts = searchString =>
-  // fetch(`http://pokeapi.co/api/v2/pokemon/${6}`)
-
-  fetch('https://lcboapi.com/products',
-    // `http://lcboapi.com/products`,
-     {
-    method: "GET",
-    // mode: 'no-cors',
-    mode: 'cors',
-    Authorization: LCBO_access_key,
-    // 'content-type': 'application/json',
-  })
-    //   $.ajax({
-    //   url: 'http://lcboapi.com/products/346197',
-    //   headers: {
-    //     Authorization: 'Token MDoyODdhM2Q2OC02ZGI2LTExZTctOGUxNy0yZjI2ZmZkNWQwYTQ6Q3hxODRJdVpTdlA5cEUzTmgwRmhUWWpJalRnWXpOOEFQbEZ'
-    //   }
-    // })
-
-    // axios.get('http://lcboapi.com/products/346197', { 'headers': { 'Authorization': LCBO_access_key } })
-    .then(res => res.json())
-    .then(res => console.log(8, "epics", res))
-    .catch(e => {console.log('request failed', e);
-    return sampleData});
-
-
-// });
-//epics go here
 const apiFetchEpic = action$ =>
   action$
     .ofType(GET_API_RESULTS)
-    // .mergeMap(action => fetchProducts()) //TODO: use search string later.
-    .map(action => {
-      // console.log(60, sampleData);
-      return sendAPIResults(sampleData)});
+    .mergeMap(action => fetchProducts()) //TODO: use search string later.
+    .map(res => {
+      return sendAPIResults(res)});
 
 export default combineEpics(apiFetchEpic);
 

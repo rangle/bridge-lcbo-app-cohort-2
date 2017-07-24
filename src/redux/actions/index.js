@@ -18,4 +18,5 @@ export const sendAPIResults = (productsList) => {
   return ({
   type: SEND_API_RESULTS,
   payload: productsList
-})};
+})
+};
