@@ -4,12 +4,12 @@ const SearchBar = props => {
 	return (
 		<form onSubmit={event => {
 						event.preventDefault()
-						this.props.getResults(props.searchText)}
+						props.getResults(props.searchString)}
 					}>
 				<input
 					className="search-input"
 					placeholder="Search..."
-					value={!props.searchText ? '' : props.searchText}
+					value={!props.searchString ? '' : props.searchString}
 					onChange={event => {
 						props.updateSearchText(event.target.value)}
 					}

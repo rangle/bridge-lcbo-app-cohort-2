@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux'
 
 
 const mapStateToProps = state => {
-  console.log(10, state)
   return ({
   wishlistIsVisible: state.wishlistIsVisible,
   searchString: state.searchString,

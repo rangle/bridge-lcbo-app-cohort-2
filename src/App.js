@@ -26,15 +26,15 @@ class App extends Component {
             onClickClosePanel,
             onClickShoppingCartLogo,
             updateSearchText,
+            products,
             getResults,
             searchString } = this.props;
 
-    console.log(32, getResults, searchString)
     return (
       <div className="App">
-        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getAlcoholList={getResults(searchString.searchString)} updateSearchText={updateSearchText} searchString={searchString}/>
+        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getResults={getResults} updateSearchText={updateSearchText} searchString={searchString}/>
         <WishlistPanel fakeProps={fakeProps} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
-        <ProductList productList={this.props.products} />
+        <ProductList productList={products} />
       </div>
     );
   }
