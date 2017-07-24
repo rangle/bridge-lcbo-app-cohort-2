@@ -1,20 +1,26 @@
-import { connect } from 'react-redux'
-import { openWishlistPanel, closeWishlistPanel } from './redux/actions/wishlist.actions'
-import { updateSearchText, getAlcoholList } from './redux/actions/header.actions'
-import App from './App.js'
+import { connect } from 'react-redux';
+import { openWishlistPanel, closeWishlistPanel } from './redux/actions/wishlist.actions';
+import { updateSearchText } from './redux/actions/header.actions'
+import { getAPIResults } from './redux/actions/index';
+import App from './App.js';
 import { bindActionCreators } from 'redux'
 
-const mapStateToProps = state => ({
+
+const mapStateToProps = state => {
+  return ({
   wishlistIsVisible: state.wishlistIsVisible,
-  searchText: state.header.searchText,
+  searchString: state.searchString,
+  products: state.products,
+  orders: state.orders,
 })
+}
 
 const mapDispatchToProps = (dispatch) => {
- return bindActionCreators({ 
+ return bindActionCreators({
  	onClickShoppingCartLogo: openWishlistPanel,
   	onClickClosePanel: closeWishlistPanel,
-  	updateSearchText, 
-  	getAlcoholList }, dispatch)
+  	updateSearchText,
+  	getResults: getAPIResults }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

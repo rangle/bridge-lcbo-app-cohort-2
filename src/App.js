@@ -1,24 +1,40 @@
-import React, { Component } from 'react'
-import './App.css'
-import 'rxjs'
-import Header from './components/Header'
-import ProductList from './components/ProductList'
-import WishlistPanel from './components/WishlistPanel'
+import React, { Component } from 'react';
+
+
+import './App.css';
+import 'rxjs';
+
+import Header from './components/Header';
+import ProductList from './components/ProductList';
+import WishlistPanel from './components/WishlistPanel';
+
+const initialState = {
+  searchString: '',
+  products: [],
+  orders: [],
+}
+
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = initialState
+  }
+
   render() {
-    const { wishlistIsVisible, 
-            onClickClosePanel, 
-            onClickShoppingCartLogo, 
-            updateSearchText, 
-            getAlcoholList, 
-            searchText } = this.props;
+    const { wishlistIsVisible,
+            onClickClosePanel,
+            onClickShoppingCartLogo,
+            updateSearchText,
+            products,
+            getResults,
+            searchString } = this.props;
 
     return (
       <div className="App">
-        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getAlcoholList={getAlcoholList} updateSearchText={updateSearchText} searchText={searchText}/>
+        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getResults={getResults} updateSearchText={updateSearchText} searchString={searchString}/>
         <WishlistPanel fakeProps={fakeProps} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
-        <ProductList {...fakeProps} />
+        <ProductList productList={products} />
       </div>
     );
   }
@@ -35,5 +51,6 @@ const fakeProps = {
     id: 12,
   }],
 }
+
 
 export default App;
