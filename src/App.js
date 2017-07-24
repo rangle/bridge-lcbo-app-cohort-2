@@ -8,8 +8,6 @@ import ProductList from './components/ProductList';
 import WishlistPanel from './components/WishlistPanel';
 
 const initialState = {
-  searchString: '',
-  products: [],
   orders: [],
 }
 
@@ -25,10 +23,7 @@ class App extends Component {
             onClickShoppingCartLogo,
             updateSearchText,
             getAlcoholList,
-            searchText,
-            products,
-            getResults,
-            searchString } = this.props;
+            searchText } = this.props;
     return (
       <div className="App">
         <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getAlcoholList={getAlcoholList} updateSearchText={updateSearchText} searchText={searchText}/>

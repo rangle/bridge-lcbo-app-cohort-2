@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { openWishlistPanel, closeWishlistPanel } from './redux/actions/wishlist.actions';
 import { addProductToWishList, removeProductFromWishList } from './redux/actions/product.actions';
-import { updateSearchText, getAlcoholList} from './redux/actions/header.actions';
+import { updateSearchText, getAlcoholList } from './redux/actions/header.actions';
 import { getAPIResults } from './redux/actions/index';
 
 const mapStateToProps = state => {
@@ -13,20 +13,19 @@ const mapStateToProps = state => {
   wishlistIsVisible: state.wishlistIsVisible,
   wishList: state.product.wishList,
   productList: state.product.productList,
-  searchString: state.searchString,
-  products: state.products,
   orders: state.orders,
 })
 }
 
 const mapDispatchToProps = (dispatch) => {
  return bindActionCreators({
- 	onClickShoppingCartLogo: openWishlistPanel,
-	onClickClosePanel: closeWishlistPanel,
-	updateSearchText,
+  onClickShoppingCartLogo: openWishlistPanel,
+  onClickClosePanel: closeWishlistPanel,
+  updateSearchText,
   addToWishList: addProductToWishList,
   removeFromWishList: removeProductFromWishList,
-  getResults: getAPIResults }, dispatch)
+  // getAlcoholList
+}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
