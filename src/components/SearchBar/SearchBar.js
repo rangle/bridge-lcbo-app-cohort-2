@@ -4,7 +4,7 @@ const SearchBar = props => {
 	return (
 		<form onSubmit={event => {
 						event.preventDefault()
-						props.getResults(props.searchText)}
+						this.props.getResults(props.searchText)}
 					}>
 				<input
 					className="search-input"

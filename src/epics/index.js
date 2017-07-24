@@ -4,7 +4,7 @@ import { GET_API_RESULTS, sendAPIResults } from "../redux/actions";
 
 const LCBO_access_key = 'MDo4OTc1NDY4Ni03MDAzLTExZTctOTNkNS04ZmJjMjZkMWQ2NTE6cHFlN3BwUEtzaDJ6aUpidHU4QnZTOU1RODVUSFZVd0RhRUc5'
 
-export const fetchProducts = (searchString) => fetch(`http://lcboapi.com/products?q=${searchString}?access_key=${LCBO_access_key}`)
+export const fetchProducts = (searchString) => fetch(`http://lcboapi.com/products?access_key=${LCBO_access_key}&?q=${searchString||''}`)
 .then(res => res.json())
 .then(res => res.result)
 .catch(e => {console.log('request failed', e);
