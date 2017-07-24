@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 import './App.css';
 import 'rxjs';
 
@@ -9,11 +8,8 @@ import ProductList from './components/ProductList';
 import WishlistPanel from './components/WishlistPanel';
 
 const initialState = {
-  searchString: '',
-  products: [],
   orders: [],
 }
-
 
 class App extends Component {
   constructor(props){
@@ -26,31 +22,16 @@ class App extends Component {
             onClickClosePanel,
             onClickShoppingCartLogo,
             updateSearchText,
-            products,
-            getResults,
-            searchString } = this.props;
-
+            getAlcoholList,
+            searchText } = this.props;
     return (
       <div className="App">
-        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getResults={getResults} updateSearchText={updateSearchText} searchString={searchString}/>
-        <WishlistPanel fakeProps={fakeProps} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel}/>
-        <ProductList productList={products} />
+        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getAlcoholList={getAlcoholList} updateSearchText={updateSearchText} searchText={searchText}/>
+        <WishlistPanel {...this.props} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel} />
+        <ProductList {...this.props} />
       </div>
     );
   }
 }
-
-//fake props for rendering
-//should be deleted once we integrate list component with redux store
-const fakeProps = {
-  productList: [{
-    name: 'tester',
-    price_in_cents: 374,
-    package: 'test',
-    image_thumb_url: 'test.com',
-    id: 12,
-  }],
-}
-
 
 export default App;
