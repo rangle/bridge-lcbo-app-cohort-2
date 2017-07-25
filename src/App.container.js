@@ -9,7 +9,7 @@ import { getAPIResults } from './redux/actions/index';
 
 const mapStateToProps = state => {
   return ({
-  searchText: state.header.searchText,
+  searchString: state.searchString,
   wishlistIsVisible: state.wishlistIsVisible,
   wishList: state.product.wishList,
   productList: state.product.productList,

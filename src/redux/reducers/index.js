@@ -18,7 +18,6 @@ export const productsReducer = (state = [], action) => {
 export default combineReducers({
     routing: routerReducer,
     searchString: header,
-    header: header,
     product: productReducer,
     wishlistIsVisible: wishlistIsVisible
 });
