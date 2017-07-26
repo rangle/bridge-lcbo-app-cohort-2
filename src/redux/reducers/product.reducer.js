@@ -13,7 +13,9 @@ const DEFAULT_STATE = {
 export default (state = DEFAULT_STATE, action) => {
   switch(action.type) {
      case SEND_API_RESULTS:
-        return { productList: action.payload }
+        return {...state,
+          productList: action.payload
+        };
 
     case PRODUCT_ACTIONS.ADD_PRODUCT_TO_WISHLIST:
       return {...state,
