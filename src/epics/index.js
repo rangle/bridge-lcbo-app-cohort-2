@@ -6,7 +6,7 @@ const LCBO_API_KEY = 'MDo4OTc1NDY4Ni03MDAzLTExZTctOTNkNS04ZmJjMjZkMWQ2NTE6cHFlN3
 
 export const fetchProducts = (searchString = '') => {
   // console.log(8, searchString, `http://lcboapi.com/products?access_key=${LCBO_API_KEY}&?q=${searchString||''}`)
-  return fetch(`http://lcboapi.com/products?access_key=${LCBO_API_KEY}&?q=${searchString}`)
+  return fetch(`http://lcboapi.com/products?q=${searchString}&access_key=${LCBO_API_KEY}`)
     .then(res => res.json())
     .then(res => res.result)
     .catch(e => {
