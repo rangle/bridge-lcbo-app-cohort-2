@@ -6,3 +6,46 @@
 ul {
   list-style: none;
 }
+
+button {
+  width: 12%;
+  max-width: 80px;
+  min-width: 100px;
+  height: 40px;
+  font-size: 1.1em;
+  color: #FFF;
+  background-color: #4197e2;
+  border-radius: 10px;
+  border-width: none;
+  border-style: none;
+  border-image: none;
+  border-color: none;
+}
+
+button:active, button:focus {
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  -ms-transform: scale(1.03, 1.03); /* IE 9 */
+   -webkit-transform: scale(1.03, 1.03); /* Safari */
+   transform: scale(1.03, 1.03);
+}
+
+*::-webkit-input-placeholder {
+    color: #000;
+    font-size: 1.1em;
+}
+*:-moz-placeholder {
+    color: #000;
+    font-size: 1.1em;
+}
+*::-moz-placeholder {
+    color: #000;
+    font-size: 1.1em;
+}
+*:-ms-input-placeholder {
+    color: #000;
+    font-size: 1.1em;
+}

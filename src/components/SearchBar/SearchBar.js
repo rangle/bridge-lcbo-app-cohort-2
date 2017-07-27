@@ -1,13 +1,16 @@
 import React from 'react'
+import './SearchBar.css'
 
 const SearchBar = props => {
 	return (
-		<form onSubmit={event => {
+		<form
+				className="searchbar"
+				onSubmit={event => {
 						event.preventDefault()
 						props.getResults(props.searchString)}
-					}>
+				}>
 				<input
-					className="search-input"
+					className="text-input"
 					placeholder="Search..."
 					value={!props.searchString ? '' : props.searchString}
 					onChange={event => {

@@ -13,7 +13,7 @@ const WishlistPanel = props => (
      function({x}) {
        return (
 
-        <div className="flyoutPanel" style={{
+        <div className="wishlist-panel" style={{
                 transform: "translate3d(" + x + "vw, 0vw, 0)"
               }}>
           <img src={close_button} className="close_button" alt="close panel button" onClick={ () => props.onClickClosePanel()} />
