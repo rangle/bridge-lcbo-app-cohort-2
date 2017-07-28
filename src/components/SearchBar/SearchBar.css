@@ -13,8 +13,5 @@
 }
 
 .searchbar .text-input:focus, .searchbar .text-input:active {
-  border-width: none;
   border-style: none;
-  border-image: none;
-  border-color: none;
 }
