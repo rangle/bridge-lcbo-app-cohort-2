@@ -1,11 +1,11 @@
 .header {
   background-color: #000;
   height: 150px;
-  padding: 100px;
+  padding: 100px 0;
   color: white;
 }
 
-.shopping-cart-logo {
+.header .shopping-cart-logo {
   top: 20px;
   right: 30px;
   position: absolute;
@@ -13,12 +13,12 @@
   height: 40px;
 }
 
-.shopping-cart-logo:hover {
+.header .shopping-cart-logo:hover {
   -ms-transform: scale(1.1, 1.1); /* IE 9 */
    -webkit-transform: scale(1.1, 1.1); /* Safari */
    transform: scale(1.1, 1.1);
 }
 
-.text-input {
-  margin-top: 100px;
+.header-text-input-group {
+  margin-top: 80px;
 }
