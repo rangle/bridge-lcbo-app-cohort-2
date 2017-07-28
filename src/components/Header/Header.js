@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar'
 
 const headerImageStyle = {
 	width: "100%",
-  backgroundImage: 'url(' + cheers  + ')',
+  backgroundImage: ` url(${cheers}) `,
   backgroundSize: 'cover',
   overflow: 'hidden'
 }
