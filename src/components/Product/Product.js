@@ -16,6 +16,7 @@ const Product = product => {
         <span>{product.package}</span>
       </div>
     </div>
+    <button type="submit">Add</button>
   </li>
 };
 

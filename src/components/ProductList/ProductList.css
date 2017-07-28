@@ -8,3 +8,12 @@
   -moz-box-shadow: -1px 1px 39px -7px rgba(0,0,0,0.75);
   box-shadow: -1px 1px 39px -7px rgba(0,0,0,0.75);
 }
+
+
+@media (max-width: 768px) {
+  .product-list {
+    width: inherit;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

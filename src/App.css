@@ -16,6 +16,7 @@ button {
   background-color: #4197e2;
   border-radius: 10px;
   border-style: none;
+  cursor: pointer;
 }
 
 button:active, button:focus {
