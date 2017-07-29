@@ -18,7 +18,7 @@ const WishList = props => {
     : <h2>No results.</h2>
 
       return(
-        <ul className="product-list">
+        <ul className="product-wishList">
           {products}
         </ul>
       );
