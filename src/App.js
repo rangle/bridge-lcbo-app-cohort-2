@@ -23,10 +23,11 @@ class App extends Component {
             onClickShoppingCartLogo,
             updateSearchText,
             getResults,
-            searchString } = this.props;
+            searchString,
+            wishList } = this.props;
     return (
       <div className="App">
-        <Header onClickShoppingCartLogo={onClickShoppingCartLogo} getResults={getResults} updateSearchText={updateSearchText} searchString={searchString}/>
+        <Header {...this.props} onClickShoppingCartLogo={onClickShoppingCartLogo} wishList={wishList} getResults={getResults} updateSearchText={updateSearchText} searchString={searchString}/>
         <WishlistPanel {...this.props} wishlistIsVisible={wishlistIsVisible} onClickClosePanel={onClickClosePanel} />
         <ProductList {...this.props} />
       </div>
