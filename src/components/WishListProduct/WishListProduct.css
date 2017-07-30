@@ -1,0 +1,46 @@
+.wl-product {
+  display: flex;
+  border-bottom: 1px solid #747474;
+  padding: 20px 10px;
+  align-items: center;
+}
+
+.wl-product img {
+  width: 100px;
+  padding-right: 8px;
+}
+
+.wl-product .wl-text-wrapper {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: left;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.wl-product .wl-text-wrapper h2 {
+  margin: 10px 0;
+  width: 100%;
+  font-size: 1.1em;
+}
+
+.wl-product .wl-text-wrapper div {
+  margin: 0px;
+  font-size: .9em;
+  display: flex;
+}
+
+.wl-product .wl-text-wrapper span:first-of-type {
+  padding-right: 10px;
+  border-right: 1px solid #747474;
+}
+
+.wl-product .wl-text-wrapper span:last-of-type {
+  color: #747474;
+  padding-left: 10px;
+}
+
+
