@@ -1,12 +1,12 @@
 import React from 'react'
 import './Header.css'
-import shopping_cart from '../../img/shopping_cart.svg'
 import cheers from '../../img/cheers.jpg'
 import SearchBar from '../SearchBar'
+import CartButton from '../CartButton'
 
 const headerImageStyle = {
 	width: "100%",
-  backgroundImage: ` url(${cheers}) `,
+  backgroundImage: `url(${cheers})`,
   backgroundSize: 'cover',
   overflow: 'hidden'
 }
@@ -14,7 +14,7 @@ const headerImageStyle = {
 const Header = props => {
 	return (
 	  <div className="header" style={ headerImageStyle }>
-	    <img src={shopping_cart} className="shopping-cart-logo" alt="open wishlist button" onClick={ () => props.onClickShoppingCartLogo()} />
+	  <CartButton wishList={props.wishList} onClick={() => props.onClickShoppingCartLogo()}/>
 	    <div className="header-text-input-group">
 			<SearchBar updateSearchText={props.updateSearchText} searchString={props.searchString} getResults={props.getResults}/>
 		</div>

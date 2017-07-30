@@ -1,6 +1,5 @@
 import App from './App.js';
 import { bindActionCreators } from 'redux';
-
 import { connect } from 'react-redux';
 import { openWishlistPanel, closeWishlistPanel } from './redux/actions/wishlist.actions';
 import { addProductToWishList, removeProductFromWishList } from './redux/actions/product.actions';
@@ -13,7 +12,6 @@ const mapStateToProps = state => {
   wishlistIsVisible: state.wishlistIsVisible,
   wishList: state.product.wishList,
   productList: state.product.productList,
-  orders: state.orders,
 })
 }
 

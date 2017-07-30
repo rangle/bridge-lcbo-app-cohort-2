@@ -5,20 +5,6 @@
   color: white;
 }
 
-.header .shopping-cart-logo {
-  top: 20px;
-  right: 30px;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-}
-
-.header .shopping-cart-logo:hover {
-  -ms-transform: scale(1.1, 1.1); /* IE 9 */
-   -webkit-transform: scale(1.1, 1.1); /* Safari */
-   transform: scale(1.1, 1.1);
-}
-
 .header-text-input-group {
   margin-top: 80px;
 }
