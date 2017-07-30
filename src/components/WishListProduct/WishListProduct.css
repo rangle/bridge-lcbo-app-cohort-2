@@ -6,8 +6,8 @@
 }
 
 .wl-product img {
-  width: 100px;
-  padding-right: 8px;
+  width: 75px;
+  padding-right: 15px;
 }
 
 .wl-text-wrapper {
@@ -49,9 +49,9 @@
 
 #close_x {
   position: absolute;
-  top: -60px;
+  top: -50px;
   right: 0px;
-  padding:2px 5px;
+  /*padding:2px 5px;*/
   font-size: 1.8em;
 
   
