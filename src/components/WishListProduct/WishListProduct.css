@@ -10,6 +10,10 @@
   padding-right: 8px;
 }
 
+.wl-text-wrapper {
+  position: relative;
+}
+
 .wl-product .wl-text-wrapper {
   display: flex;
   flex-grow: 2;
@@ -43,14 +47,13 @@
   padding-left: 10px;
 }
 
-.wl-text-wrapper .close_x {
-  display: block;
-  left: 60px;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin-top: 40px;
-  
+#close_x {
+  position: absolute;
+  top: -60px;
+  right: 0px;
+  padding:2px 5px;
+  font-size: 1.8em;
+
   
 }
 
