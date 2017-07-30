@@ -43,4 +43,15 @@
   padding-left: 10px;
 }
 
+.wl-text-wrapper .close_x {
+  display: block;
+  left: 60px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 40px;
+  
+  
+}
+
 

@@ -15,6 +15,9 @@ const WishListProduct = wishListProduct => {
         <span>${(wishListProduct.price_in_cents / 100).toFixed(2)}</span>
         <span>{wishListProduct.package}</span>
       </div>
+      <div className="close_x">
+        X
+      </div>
     </div>
     
   </li>
