@@ -130,34 +130,4 @@
 
 }
 
-@media (max-width: 940px) {
-  .wishlist-panel {
-    width: 100%;
-  }
 
-}
-
-@media (max-width: 768px) {
-  .wishlist-panel {
-
-  }
-
-}
-
-@media (max-width: 600px) {
-  .wishlist-panel {
-  }
-
-}
-
-@media (max-width: 480px) {
-  .wishlist-panel {
-  }
-
-}
-
-@media (max-width: 320px) {
-  .wishlist-panel {
-  }
-
-}
