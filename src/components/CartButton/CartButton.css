@@ -18,8 +18,14 @@
   top: 20px;
   right: 30px;
   position: absolute;
-  width: 40px;
+  width: 44px;
   height: 40px;
   background-image: url('../../img/shopping_cart.svg');
   background-size: cover;
+}
+
+.cart-wrapper:hover {
+  -ms-transform: scale(1.1, 1.1); /* IE 9 */
+  -webkit-transform: scale(1.1, 1.1); /* Safari */
+  transform: scale(1.1, 1.1);
 }
