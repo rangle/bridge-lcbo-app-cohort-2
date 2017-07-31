@@ -15,11 +15,11 @@ const WishListProduct = wishListProduct => {
         <span>${(wishListProduct.price_in_cents / 100).toFixed(2)}</span>
         <span>{wishListProduct.package}</span>
       </div>
-      <div id="close_x">
+      
+    </div>
+    <div id="close_x">
         &times;
       </div>
-    </div>
-    
   </li>
 };
 
