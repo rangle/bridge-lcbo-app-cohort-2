@@ -13,7 +13,6 @@ import { updateSearchText } from "./redux/actions/header.actions"
 import { getAPIResults } from "./redux/actions/index"
 
 const mapStateToProps = state => {
-  console.log("STATE", state)
   return {
     searchString: state.header.searchString,
     wishlistIsVisible: state.wishlistIsVisible,

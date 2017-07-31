@@ -12,7 +12,6 @@ const headerImageStyle = {
 }
 
 const Header = props => {
-  console.log("PROPS", props)
   return (
     <div className="header" style={headerImageStyle}>
       <CartButton
