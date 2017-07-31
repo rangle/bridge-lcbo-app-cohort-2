@@ -11,10 +11,6 @@
   padding-right: 15px;
 }
 
-.wl-text-wrapper {
-  /*position: relative;*/
-}
-
 .wl-product .wl-text-wrapper {
   display: flex;
   flex-grow: 2;
