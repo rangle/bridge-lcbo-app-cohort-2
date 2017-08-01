@@ -2,10 +2,7 @@ import {
   headerReducer,
   DEFAULT_STATE
 } from "../../redux/reducers/header.reducer"
-import {
-  HEADER_ACTIONS,
-  updateSearchText
-} from "../../redux/actions/header.actions"
+import { updateSearchText } from "../../redux/actions/header.actions"
 
 describe("header Reducer", () => {
   let headerReducerState = headerReducer(DEFAULT_STATE, {
