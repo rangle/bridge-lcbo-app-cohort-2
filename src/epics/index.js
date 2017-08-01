@@ -1,6 +1,8 @@
 import { combineEpics } from "redux-observable";
 import { GET_API_RESULTS, sendAPIResults } from "../redux/actions";
 import { sampleData } from './sampleData';
+import {Observable} from 'rxjs';
+
 
 const LCBO_API_KEY = 'MDo4OTc1NDY4Ni03MDAzLTExZTctOTNkNS04ZmJjMjZkMWQ2NTE6cHFlN3BwUEtzaDJ6aUpidHU4QnZTOU1RODVUSFZVd0RhRUc5'
 
@@ -16,11 +18,13 @@ export const fetchProducts = (searchString = '') => {
 }
 
 
-const apiFetchEpic = action$ =>
+export const apiFetchEpic = (action$, blah, { ajax }) =>
   action$
     .ofType(GET_API_RESULTS)
-    .mergeMap(action => fetchProducts(action.payload)) //TODO: use search string later.
+    .mergeMap(action => ajax(`http://lcboapi.com/products?q=${action.payload}&access_key=${LCBO_API_KEY}`)) //TODO: use search string later.
     .map(res => {
       return sendAPIResults(res)});
 
-export default combineEpics(apiFetchEpic);
+export default (...args) => combineEpics(
+  apiFetchEpic,
+)(...args, {ajax: Observable.ajax})
