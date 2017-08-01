@@ -1,15 +1,15 @@
 import React from 'react';
-import Product from '../Product';
+import WishListProduct from '../WishListProduct';
 
 const WishList = props => {
-  let products;
+  let wlproducts;
 
   if (!props.wishList) {
     return null;
   } else {
 
-    products = props.wishList.length > 0
-    ? props.wishList.map(product => <Product
+    wlproducts = props.wishList.length > 0
+    ? props.wishList.map(product => <WishListProduct
       key={product.id}
       {...product}
       addToWishList={props.addToWishList}
@@ -18,8 +18,8 @@ const WishList = props => {
     : <h2>No results.</h2>
 
       return(
-        <ul className="product-list">
-          {products}
+        <ul className="product-wishList">
+          {wlproducts}
         </ul>
       );
   }
