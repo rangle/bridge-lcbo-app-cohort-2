@@ -49,9 +49,10 @@
   top: 0px;
   right: 15px;
   padding-top: 5px;
-  font-size: 1.5em;
-
-  
+  font-size: 1.5em;  
 }
 
+.wl-product #close_x:hover {
+  cursor: pointer;
+}
 
