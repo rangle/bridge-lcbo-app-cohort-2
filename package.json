@@ -33,6 +33,6 @@
   "devDependencies": {
     "eslint": "^4.2.0",
     "eslint-config-react-app": "^1.0.5",
-    "prettier-eslint": "^6.4.2"
+    "prettier": "^1.5.3"
   }
 }
