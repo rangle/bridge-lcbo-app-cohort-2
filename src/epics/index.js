@@ -23,7 +23,6 @@ export const apiFetchEpic = (action$, blah, { ajax }) =>
     .ofType(GET_API_RESULTS)
     .mergeMap(action => ajax(`http://lcboapi.com/products?q=${action.payload}&access_key=${LCBO_API_KEY}`)) //TODO: use search string later.
     .map(({response}) => {
-      // console.log(26, response);
       return sendAPIResults(response.result)});
 
 export default (...args) => combineEpics(
