@@ -16,7 +16,7 @@ const ProductList = props => {
       addToWishList={props.addToWishList}
       removeFromWishList={props.removeFromWishList}
       wishList={props.wishList} />)
-    : <h2>No results.</h2>
+    : <h2 style={{ color: 'purple' }}>No results.</h2>
 
       return(
         <ul className="product-list">
