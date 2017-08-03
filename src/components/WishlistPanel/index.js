@@ -1,3 +1,3 @@
-import WishlistPanel from './WishlistPanel';
+import WishlistPanel from "./WishlistPanel"
 
-export default WishlistPanel;
+export default WishlistPanel
