@@ -14,7 +14,6 @@
 
 .wishlist-panel .close_button {
   display: block;
-  left: 30px;
   position: relative;
   width: 20px;
   height: 20px;
@@ -28,7 +27,7 @@
 }
 
 .wishlist-header {
-  margin-left: 30px;
+  color: #EA2668;
   text-align: left;
 }
 
@@ -36,6 +35,10 @@
   width: 35%;
   max-width: 200px;
   min-width: 120px;
+}
+
+.product-wishList {
+  padding: 0;
 }
 
 .product-wishList button {
@@ -55,12 +58,12 @@
     padding: 0;
   }
 
-  
+
 
 @media (max-width: 1024px) {
 
   .wishlist-panel {
-    width: 90%;   
+    width: 90%;
   }
 
   .product {
