@@ -1,6 +1,6 @@
 import { PRODUCT_ACTIONS } from '../actions/product.actions';
 import {SEND_API_RESULTS} from '../actions/';
-const DEFAULT_STATE = {
+export const DEFAULT_STATE = {
   wishList: [],
   productList: [],
 };
@@ -10,7 +10,7 @@ const DEFAULT_STATE = {
 //   fakeProps.wishList = JSON.parse(localStorage.getItem("state")).wishList;
 // }
 
-export default (state = DEFAULT_STATE, action) => {
+export const productReducer = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
      case SEND_API_RESULTS:
         return {...state,
@@ -32,3 +32,5 @@ export default (state = DEFAULT_STATE, action) => {
       return state;
   }
 }
+
+export default productReducer;
