@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.wl-product:first-of-type {
+  border-top: 1px solid #EA2668;
+}
+
 .wl-product img {
   width: 75px;
   padding-right: 15px;
@@ -49,7 +53,7 @@
   top: 0px;
   right: 15px;
   padding-top: 5px;
-  font-size: 1.5em;  
+  font-size: 1.5em;
 }
 
 .wl-product #close_x:hover {
