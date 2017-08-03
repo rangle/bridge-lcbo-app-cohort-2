@@ -1,3 +1,3 @@
-import CartButton from './CartButton';
+import CartButton from "./CartButton"
 
-export default CartButton;
+export default CartButton

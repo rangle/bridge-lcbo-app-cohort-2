@@ -1,9 +1,9 @@
-import { PRODUCT_ACTIONS } from '../actions/product.actions';
-import {SEND_API_RESULTS} from '../actions/';
+import { PRODUCT_ACTIONS } from "../actions/product.actions"
+import { SEND_API_RESULTS } from "../actions/"
 export const DEFAULT_STATE = {
   wishList: [],
-  productList: [],
-};
+  productList: []
+}
 
 // if (localStorage.getItem("state") !== null) {
 //   //set this to DEFAULT_STATE when we remove fakeProps
@@ -11,26 +11,30 @@ export const DEFAULT_STATE = {
 // }
 
 export const productReducer = (state = DEFAULT_STATE, action) => {
-  switch(action.type) {
-     case SEND_API_RESULTS:
-        return {...state,
-          productList: action.payload
-        };
+  switch (action.type) {
+    case SEND_API_RESULTS:
+      return {
+        ...state,
+        productList: action.payload
+      }
 
     case PRODUCT_ACTIONS.ADD_PRODUCT_TO_WISHLIST:
-      return {...state,
+      return {
+        ...state,
         wishList: state.wishList.concat(action.payload)
-      };
+      }
 
     case PRODUCT_ACTIONS.REMOVE_PRODUCT_FROM_WISHLIST:
-      return {...state,
-        wishList: state.wishList
-        .filter(product => product.id !== action.payload.id)
-      };
+      return {
+        ...state,
+        wishList: state.wishList.filter(
+          product => product.id !== action.payload.id
+        )
+      }
 
     default:
-      return state;
+      return state
   }
 }
 
-export default productReducer;
+export default productReducer
