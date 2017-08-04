@@ -24,7 +24,9 @@ const WishlistPanel = props =>
             Wishlist ({props.wishList ? props.wishList.length : 0})
           </h2>
           <WishList {...props} />
-          <button>Find stores</button>
+          <button onClick={() => props.getStoresByProductIDs()}>
+            Find stores
+          </button>
         </div>
       )
     }}

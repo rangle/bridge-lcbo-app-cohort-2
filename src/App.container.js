@@ -11,6 +11,7 @@ import {
 } from "./redux/actions/product.actions"
 import { updateSearchText } from "./redux/actions/header.actions"
 import { getProductResults } from "./redux/actions/index"
+import { getStoresByProductIDs } from "./redux/actions/storeLocation.actions"
 
 const mapStateToProps = state => {
   return {
@@ -29,7 +30,8 @@ const mapDispatchToProps = dispatch => {
       updateSearchText,
       addToWishList: addProductToWishList,
       removeFromWishList: removeProductFromWishList,
-      getResults: getProductResults
+      getResults: getProductResults,
+      getStoresByProductIDs
     },
     dispatch
   )
