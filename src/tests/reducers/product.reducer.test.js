@@ -6,7 +6,7 @@ import {
   addProductToWishList,
   removeProductFromWishList
 } from "../../redux/actions/product.actions"
-import { sendAPIResults } from "../../redux/actions"
+import { sendProductResults } from "../../redux/actions"
 
 describe("Product Reducer", () => {
   let productReducerState = productReducer(DEFAULT_STATE, {
@@ -49,7 +49,7 @@ describe("Product Reducer", () => {
 
     productReducerState = productReducer(
       productReducerState,
-      sendAPIResults(["socks", "mocks"])
+      sendProductResults(["socks", "mocks"])
     )
 
     expect(productReducerState.productList).toEqual(["socks", "mocks"])

@@ -1,5 +1,5 @@
 import { PRODUCT_ACTIONS } from "../actions/product.actions"
-import { SEND_API_RESULTS } from "../actions/"
+import { SEND_PRODUCT_RESULTS } from "../actions/"
 export const DEFAULT_STATE = {
   wishList: [],
   productList: []
@@ -12,7 +12,7 @@ export const DEFAULT_STATE = {
 
 export const productReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case SEND_API_RESULTS:
+    case SEND_PRODUCT_RESULTS:
       return {
         ...state,
         productList: action.payload
