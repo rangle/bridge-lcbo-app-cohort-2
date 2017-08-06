@@ -15,5 +15,3 @@ export const sendProductResults = productsList => {
     payload: productsList
   }
 }
-
-
