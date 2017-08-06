@@ -1,5 +1,4 @@
 import { GET_STORES_BY_PRODUCT_IDS } from "../redux/actions"
-import { Observable } from "rxjs"
 import { LCBO_API_KEY, LCBO_BASE_URL } from "../constants"
 
 export const getStoreLocations = (action$, _, { ajax }) =>

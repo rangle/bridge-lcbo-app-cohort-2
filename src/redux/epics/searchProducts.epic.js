@@ -1,5 +1,4 @@
 import { GET_PRODUCT_RESULTS, sendProductResults } from "../actions"
-import { Observable } from "rxjs"
 import { LCBO_API_KEY, LCBO_BASE_URL } from "../constants"
 
 export const searchProducts = (action$, _, { ajax }) =>
