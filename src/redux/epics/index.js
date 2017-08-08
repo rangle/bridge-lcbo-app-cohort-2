@@ -2,6 +2,9 @@ import { combineEpics } from "redux-observable"
 import { Observable } from "rxjs"
 
 import { searchProducts } from "./searchProducts.epic"
+import { getStoreLocations } from "./getStoreLocations.epic"
 
 export default (...args) =>
-  combineEpics(searchProducts)(...args, { ajax: Observable.ajax })
+  combineEpics(searchProducts, getStoreLocations)(...args, {
+    ajax: Observable.ajax
+  })

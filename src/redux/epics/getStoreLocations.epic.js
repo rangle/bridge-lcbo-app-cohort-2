@@ -1,9 +1,13 @@
-import { GET_STORES_BY_PRODUCT_IDS } from "../redux/actions"
+import {
+  STORE_LOCATION_ACTIONS,
+  sendStoresByProductIDs
+} from "../actions/storeLocation.actions"
+
 import { LCBO_API_KEY, LCBO_BASE_URL } from "../constants"
 
 export const getStoreLocations = (action$, _, { ajax }) =>
   action$
-    .ofType(GET_STORES_BY_PRODUCT_IDS)
+    .ofType(STORE_LOCATION_ACTIONS.GET_STORES_BY_PRODUCT_IDS)
     .mergeMap(action =>
       ajax(
         `${LCBO_BASE_URL}stores?product_id=${action
@@ -11,6 +15,5 @@ export const getStoreLocations = (action$, _, { ajax }) =>
       )
     )
     .map(({ response }) => {
-      console.log(response.result)
-      // return sendProductResults(response.result)
+      return sendStoresByProductIDs(response.result)
     })
