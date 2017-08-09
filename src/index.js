@@ -2,6 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "./index.css"
 import App from "./App.container.js"
+import StoreFinder from "./containers/StoreFinder.container.js"
 import { saveState } from "./localStorage.js"
 import registerServiceWorker from "./registerServiceWorker"
 import { Provider } from "react-redux"
@@ -39,6 +40,7 @@ ReactDOM.render(
     {/* Tell the Router to use our enhanced history */}
     <Router history={history}>
       <Route path="/" component={App} />
+      <Route path="/find-stores" component={StoreFinder} />
     </Router>
   </Provider>,
   document.getElementById("root")
