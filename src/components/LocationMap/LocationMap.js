@@ -5,8 +5,6 @@ import "./LocationMap.css"
 const googleMapURL =
   "https://maps.googleapis.com/maps/api/js?v=3.27&libraries=places,geometry&key=AIzaSyB0XpkaYuIPOm1NIyUsBeuegTTyaz8vfW4"
 
-// const TOR_LAT_LONG = { lat: 43.6532, lng: 79.3832 }
-
 const LocationMap = props => {
   return (
     <GoogleMap
