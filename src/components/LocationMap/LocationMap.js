@@ -12,7 +12,7 @@ const LocationMap = props => {
     <GoogleMap
       ref={props.onMapLoad}
       defaultZoom={3}
-      defaultCenter={{ lat: 43.6532, lng: 79.3832 }} //Toronto lat/long
+      defaultCenter={{ lat: 43.6532, lng: 79.3832 }} //Toronto location coordinates
       // Pass the map reference here as props
       googleMapURL={googleMapURL}
       onClick={props.onMapClick}

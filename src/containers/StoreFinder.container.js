@@ -1,24 +1,33 @@
 import React from "react"
+import { GoogleMap, Marker } from "react-google-maps"
 import StoresList from "../components/StoresList"
+import LocationMap from "../components/LocationMap"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import { getStoresByProductIDs } from "../redux/actions/storeLocation.actions"
 
-const StoreFinder = props => <StoresList {...props} />
+const StoreFinder = props => {
+	return (
+		<div>
+			<StoresList {...props} />
+			<LocationMap {...props} />
+		</div>
+	)
+}
 
 const mapStateToProps = state => {
-  return {
-    storeList: state.storesList.storeList
-  }
+	return {
+		storeList: state.storesList.storeList
+	}
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
-    {
-      getStoresByProductIDs
-    },
-    dispatch
-  )
+	return bindActionCreators(
+		{
+			getStoresByProductIDs
+		},
+		dispatch
+	)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoreFinder)
