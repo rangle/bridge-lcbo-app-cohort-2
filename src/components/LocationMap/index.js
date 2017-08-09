@@ -1,3 +1,3 @@
-import LocationMap from "./StoresList"
+import LocationMap from "./LocationMap"
 
 export default LocationMap
