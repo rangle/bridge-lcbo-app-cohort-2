@@ -2,9 +2,11 @@ import { default as React, Component } from "react"
 
 import { withGoogleMap, GoogleMap } from "react-google-maps"
 
+const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 } // Toronto lat/long coordinates
+
 const SimpleMap = withGoogleMap(props =>
-	<GoogleMap defaultZoom={8} defaultCenter={{ lat: 43.6532, lng: 79.3832 }} />
-) // Toronto lat/long coordinates
+	<GoogleMap defaultZoom={16} defaultCenter={TOR_LAT_LNG} />
+)
 
 export default class LocationMap extends Component {
 	render() {
