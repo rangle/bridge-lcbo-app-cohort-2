@@ -10,7 +10,7 @@ import {
   removeProductFromWishList
 } from "./redux/actions/product.actions"
 import { updateSearchText } from "./redux/actions/header.actions"
-import { getProductResults } from "./redux/actions/index"
+import { getProductResults } from "./redux/actions/product.actions"
 import { getStoresByProductIDs } from "./redux/actions/storeLocation.actions"
 
 const mapStateToProps = state => {

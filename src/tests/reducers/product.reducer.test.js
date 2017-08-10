@@ -6,7 +6,7 @@ import {
   addProductToWishList,
   removeProductFromWishList
 } from "../../redux/actions/product.actions"
-import { sendProductResults } from "../../redux/actions"
+import { sendProductResults } from "../../redux/actions/product.actions"
 
 describe("Product Reducer", () => {
   let productReducerState = productReducer(DEFAULT_STATE, {
