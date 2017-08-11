@@ -1,10 +1,20 @@
 .header {
-  background-color: #000;
-  height: 150px;
-  padding: 100px 0;
-  color: white;
+	background-color: #000;
+	height: 150px;
+	padding: 100px 0;
+	color: white;
+	width: 100%;
+	background: linear-gradient(0deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+		url(../../img/cheers.jpg);
+	background-size: cover;
+	overflow: hidden;
+}
+
+.title {
+	color: #f7f4ef;
+	text-transform: uppercase;
 }
 
 .header-text-input-group {
-  margin-top: 80px;
+	margin-top: 80px;
 }
