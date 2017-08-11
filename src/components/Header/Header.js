@@ -16,7 +16,9 @@ import CartButton from "../CartButton"
 const Header = props => {
   return (
     <div className="header">
-      <h1>LCBO App</h1>
+      <div className="title">
+        <h1>LCBO App Title</h1>
+      </div>
       <CartButton
         wishList={props.wishList}
         onClick={() => props.onClickShoppingCartLogo()}
