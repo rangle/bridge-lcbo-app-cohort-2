@@ -5,13 +5,29 @@ import { withGoogleMap, GoogleMap } from "react-google-maps"
 const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 } // Toronto lat/long coordinates
 
 const SimpleMap = withGoogleMap(props =>
-	<GoogleMap defaultZoom={16} defaultCenter={TOR_LAT_LNG} />
+	<GoogleMap
+		ref={res => props.onLoad(res)}
+		defaultZoom={16}
+		defaultCenter={TOR_LAT_LNG}
+	/>
 )
 
 export default class LocationMap extends Component {
+	componentDidMount(nextProps) {
+		navigator.geolocation.getCurrentPosition(position => {
+			const latLng = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			}
+
+			this.mapLib.panTo(latLng)
+		})
+	}
+
 	render() {
 		return (
 			<SimpleMap
+				onLoad={res => (this.mapLib = res)}
 				containerElement={
 					<div
 						style={{
