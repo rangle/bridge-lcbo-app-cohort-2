@@ -1,6 +1,5 @@
 import React from "react"
 import "./Header.css"
-import cheers from "../../img/cheers.jpg"
 import SearchBar from "../SearchBar"
 import CartButton from "../CartButton"
 
