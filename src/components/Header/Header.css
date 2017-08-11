@@ -2,11 +2,10 @@
 	background-color: #000;
 	height: 150px;
 	padding: 100px 0;
-	/*color: white;*/
+	color: white;
 	width: 100%;
 	background: linear-gradient(0deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
 		url(../../img/cheers.jpg);
-	/*background-image: url('../../img/cheers.jpg');*/
 	background-size: cover;
 	overflow: hidden;
 }
@@ -15,14 +14,6 @@
 	color: #f7f4ef;
 	text-transform: uppercase;
 }
-
-/*.headerImageStyle {
-	width: 100%;
-	background: linear-gradient(0deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-		url(../../img/cheers.jpg);
-	background-size: "cover";
-	overflow: "hidden";
-}*/
 
 .header-text-input-group {
 	margin-top: 80px;
