@@ -8,7 +8,7 @@ import { getStoresByProductIDs } from "../redux/actions/storeLocation.actions"
 const StoreFinder = props =>
 	<div>
 		<StoresList {...props} />
-		<LocationMap {...props} />
+		<LocationMap />
 	</div>
 
 const mapStateToProps = state => {

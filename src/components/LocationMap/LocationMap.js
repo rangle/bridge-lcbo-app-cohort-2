@@ -16,9 +16,10 @@ export default class LocationMap extends Component {
 					<div
 						style={{
 							position: "absolute",
-							height: `50%`,
-							top: `10em`,
-							left: 0,
+							height: `100%`,
+							width: `70%`,
+							top: 0,
+							left: `30em`,
 							right: 0,
 							bottom: 0,
 							justifyContent: "flex-end",
