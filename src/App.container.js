@@ -1,6 +1,8 @@
 import App from "./App.js"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
+import getUserLocation from './utils/getUserLocation'
+
 import {
   openWishlistPanel,
   closeWishlistPanel
@@ -31,10 +33,17 @@ const mapDispatchToProps = dispatch => {
       addToWishList: addProductToWishList,
       removeFromWishList: removeProductFromWishList,
       getResults: getProductResults,
-      getStoresByProductIDs
+      getStoresByProductIDs,
     },
     dispatch
   )
 }
+
+console.log(getUserLocation())
+// const test = async () => await getUserLocation()
+//
+// const test1 = test();
+
+// console.log(test1);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
