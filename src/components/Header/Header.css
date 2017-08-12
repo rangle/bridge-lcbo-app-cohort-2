@@ -4,7 +4,7 @@
 	padding: 100px 0;
 	color: white;
 	width: 100%;
-	background: linear-gradient(0deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+	background: linear-gradient(0deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
 		url(../../img/cheers.jpg);
 	background-size: cover;
 	overflow: hidden;
