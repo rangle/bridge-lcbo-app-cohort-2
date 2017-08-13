@@ -3,7 +3,7 @@ import "./SearchBar.css"
 
 const SearchBar = props => {
   return (
-    <form
+    <div
       className="searchbar"
       onSubmit={event => {
         event.preventDefault()
@@ -19,7 +19,7 @@ const SearchBar = props => {
           props.getResults(event.target.value, 500)
         }}
       />
-    </form>
+    </div>
   )
 }
 

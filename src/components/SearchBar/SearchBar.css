@@ -10,6 +10,10 @@
   border-style: none;
 }
 
+.searchbar .text-input::placeholder {
+  color: #828282;
+}
+
 .searchbar .text-input:focus,
 .searchbar .text-input:active {
   border-style: none;
