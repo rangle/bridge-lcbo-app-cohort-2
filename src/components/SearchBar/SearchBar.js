@@ -12,16 +12,13 @@ const SearchBar = props => {
     >
       <input
         className="text-input"
-        placeholder="Search..."
+        placeholder="Start typing to search..."
         value={!props.searchString ? "" : props.searchString}
         onChange={event => {
           props.updateSearchText(event.target.value)
           props.getResults(event.target.value, 500)
         }}
       />
-      <span>
-        <button type="submit">Search</button>
-      </span>
     </form>
   )
 }

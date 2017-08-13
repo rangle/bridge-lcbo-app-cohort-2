@@ -18,3 +18,9 @@
 .header-text-input-group {
 	margin-top: 80px;
 }
+
+@media (max-width: 768px) {
+	.header-text-input-group {
+		margin-top: 60px;
+	}
+}
