@@ -2,7 +2,6 @@
   width: 40%;
   min-width: 80px;
   height: 40px;
-  margin-right: 20px;
   padding: 0 0 0 20px;
   border-radius: 10px;
   color: #000;
@@ -11,7 +10,17 @@
   border-style: none;
 }
 
+.searchbar .text-input::placeholder {
+  color: #828282;
+}
+
 .searchbar .text-input:focus,
 .searchbar .text-input:active {
   border-style: none;
+}
+
+@media (max-width: 768px) {
+  .searchbar .text-input {
+    width: 70%;
+  }
 }
