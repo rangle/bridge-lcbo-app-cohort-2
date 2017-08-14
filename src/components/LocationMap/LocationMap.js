@@ -13,16 +13,17 @@ const SimpleMap = withGoogleMap(props =>
 )
 
 export default class LocationMap extends Component {
-	componentDidMount(nextProps) {
-		navigator.geolocation.getCurrentPosition(position => {
-			const latLng = {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			}
+	//this functionality should be moved to an epic:
+	// componentDidMount(nextProps) {
+	// 	navigator.geolocation.getCurrentPosition(position => {
+	// 		const latLng = {
+	// 			lat: position.coords.latitude,
+	// 			lng: position.coords.longitude
+	// 		}
 
-			this.mapLib.panTo(latLng)
-		})
-	}
+	// 		this.mapLib.panTo(latLng)
+	// 	})
+	// }
 
 	render() {
 		return (
