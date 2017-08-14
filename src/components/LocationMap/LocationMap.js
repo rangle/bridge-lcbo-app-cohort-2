@@ -7,7 +7,10 @@ const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 } // Toronto lat/long coordina
 const SimpleMap = withGoogleMap(props =>
   <GoogleMap ref={props.onMapLoad} defaultZoom={14} defaultCenter={TOR_LAT_LNG}>
     {props.stores.map(store =>
-      <Marker position={{ lat: store.latitude, lng: store.longitude }} />
+      <Marker
+        position={{ lat: store.latitude, lng: store.longitude }}
+        key={store.id}
+      />
     )}
   </GoogleMap>
 )
