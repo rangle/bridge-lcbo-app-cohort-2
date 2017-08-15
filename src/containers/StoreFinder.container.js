@@ -8,27 +8,27 @@ import { Link } from "react-router"
 import "./StoreFinder.container.css"
 
 const StoreFinder = props =>
-	<div className="storeFinder-container">
-		<Link className="link" to="/">
-			&larr; go back
-		</Link>
-		<StoresList {...props} />
-		<LocationMap />
-	</div>
+  <div className="storeFinder-container">
+    <Link className="link" to="/">
+      &larr; go back
+    </Link>
+    <StoresList {...props} />
+    <LocationMap {...props} />
+  </div>
 
 const mapStateToProps = state => {
-	return {
-		storeList: state.storesList.storeList
-	}
+  return {
+    storeList: state.storesList.storeList
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-	return bindActionCreators(
-		{
-			getStoresByProductIDs
-		},
-		dispatch
-	)
+  return bindActionCreators(
+    {
+      getStoresByProductIDs
+    },
+    dispatch
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoreFinder)
