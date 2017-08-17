@@ -6,7 +6,6 @@ import "rxjs/add/observable/of"
 import { getStoreLocations } from "../../redux/epics/getStoreLocations.epic"
 import {
   getStoresByProductIDs,
-  sendStoresByProductIDs,
   STORE_LOCATION_ACTIONS
 } from "../../redux/actions/storeLocation.actions"
 
