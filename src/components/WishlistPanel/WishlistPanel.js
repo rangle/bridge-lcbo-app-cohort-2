@@ -3,6 +3,7 @@ import { Motion, spring } from "react-motion"
 import WishList from "../WishList"
 import "./WishlistPanel.css"
 import close_button from "../../img/close_button.svg"
+import { Link } from "react-router"
 
 const WishlistPanel = props =>
   <Motion style={{ x: spring(props.wishlistIsVisible ? 0 : 130) }}>
@@ -24,9 +25,11 @@ const WishlistPanel = props =>
             Wishlist ({props.wishList ? props.wishList.length : 0})
           </h2>
           <WishList {...props} />
-          <button onClick={() => props.getStoresByProductIDs()}>
-            Find stores
-          </button>
+          <Link className="link" to="/find-stores">
+            <button onClick={() => props.getStoresByProductIDs()}>
+              Find stores
+            </button>
+          </Link>
         </div>
       )
     }}
