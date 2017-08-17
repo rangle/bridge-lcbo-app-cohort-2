@@ -12,9 +12,10 @@ const StoresList = props => {
               <p>
                 <strong>{store.name}</strong>
                 <br />
-                Address: {store.address_line_1} <br />
-                Distance: {store.distance_in_meters / 1000} km <br />
-                Telephone: {store.telephone}
+                {store.address_line_1} <br />
+                {store.telephone} <br />
+                Distance: {(store.distance_in_meters / 1000).toFixed(1)} km
+                <br />
                 <br />
               </p>
             </li>
