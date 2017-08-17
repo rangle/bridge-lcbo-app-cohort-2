@@ -1,5 +1,5 @@
-import { wishlistIsVisible } from "./wishlist.reducer"
-import { WISHLIST_ACTIONS } from "../actions/wishlist.actions"
+import { wishlistIsVisible } from "../../redux/reducers/wishlist.reducer"
+import { WISHLIST_ACTIONS } from "../../redux/actions/wishlist.actions"
 
 describe("wishlist panel reducer", () => {
   let wishlistReducerState = wishlistIsVisible(false, {
