@@ -21,10 +21,9 @@ export const getUserCurrentLocation = () => ({
   type: STORE_LOCATION_ACTIONS.GET_USER_CURRENT_LOCATION,
 });
 
-export const setUserLocation = payload => {
-  console.log("payload", payload);
-  return {
+export const setUserLocation = (payload) => {
+  return ({
     type: STORE_LOCATION_ACTIONS.SET_USER_CURRENT_LOCATION,
     payload: payload,
-  };
+  });
 };
