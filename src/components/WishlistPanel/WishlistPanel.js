@@ -26,7 +26,7 @@ const WishlistPanel = props =>
           </h2>
           <WishList {...props} />
           <Link className="link" to="/find-stores">
-            <button onClick={() => props.getStoresByProductIDs()}>
+            <button onClick={() => {props.getStoresByProductIDs({id: 311787, latLng: props.latLng})}}>
               Find stores
             </button>
           </Link>

@@ -17,6 +17,10 @@ class App extends Component {
     this.state = initialState
   }
 
+  componentDidMount(nextProps) {
+    this.props.getUserCurrentLocation()
+  }
+  
   render() {
     const {
       wishlistIsVisible,

@@ -17,7 +17,6 @@ const SimpleMap = withGoogleMap(props =>
 
 export default class LocationMap extends Component {
 
-		//this functionality should be moved to an epic:
 		componentDidMount(nextProps) {
       this.props.getUserCurrentLocation()
       // this.mapLib.panTo(this.props.latLng)

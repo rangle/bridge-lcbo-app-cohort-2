@@ -6,7 +6,6 @@ const DEFAULT_STATE = {
 };
 
 export const storeLocationReducer = (state = DEFAULT_STATE, action) => {
-  console.log(9, action)
   switch (action.type) {
     case STORE_LOCATION_ACTIONS.SEND_STORES_BY_PRODUCT_IDS:
       return {

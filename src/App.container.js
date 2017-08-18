@@ -13,15 +13,15 @@ import {
 } from "./redux/actions/product.actions"
 import { updateSearchText } from "./redux/actions/header.actions"
 import { getProductResults } from "./redux/actions/product.actions"
-import { getStoresByProductIDs, setUserLocation } from "./redux/actions/storeLocation.actions"
+import { getStoresByProductIDs, setUserLocation, getUserCurrentLocation } from "./redux/actions/storeLocation.actions"
 
 const mapStateToProps = state => {
-  console.log(19, state)
   return {
     searchString: state.header.searchString,
     wishlistIsVisible: state.wishlistIsVisible,
     wishList: state.product.wishList,
-    productList: state.product.productList
+    productList: state.product.productList,
+    latLng: state.storesList.latLng
   }
 }
 
@@ -36,16 +36,12 @@ const mapDispatchToProps = dispatch => {
       getResults: getProductResults,
       getStoresByProductIDs,
       setUserLocation,
+      getUserCurrentLocation,
     },
     dispatch
   )
 }
 
 console.log(getUserLocation())
-// const test = async () => await getUserLocation()
-//
-// const test1 = test();
-
-// console.log(test1);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
