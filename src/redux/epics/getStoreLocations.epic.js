@@ -8,6 +8,8 @@ import {
 
 import { LCBO_API_KEY, LCBO_BASE_URL } from "../constants";
 
+const productIDs = ids => ids.join(",")
+
 export const getStoreLocations = (action$, _, { ajax }) =>
   action$
     .ofType(STORE_LOCATION_ACTIONS.GET_STORES_BY_PRODUCT_IDS)

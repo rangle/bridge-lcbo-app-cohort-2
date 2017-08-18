@@ -5,12 +5,10 @@ export const STORE_LOCATION_ACTIONS = {
   SET_USER_CURRENT_LOCATION: "SET_USER_CURRENT_LOCATION",
 };
 
-export const getStoresByProductIDs = (payload) => {
-  return {
-    type: STORE_LOCATION_ACTIONS.GET_STORES_BY_PRODUCT_IDS,
-    payload: payload,
-  };
-};
+export const getStoresByProductIDs = ids => ({
+  type: STORE_LOCATION_ACTIONS.GET_STORES_BY_PRODUCT_IDS,
+  payload: [311787, 109017, 432732]
+})
 
 export const sendStoresByProductIDs = storesList => {
   return {

@@ -9,11 +9,14 @@ const StoresList = props => {
       props.storeList.length > 0
         ? props.storeList.map(store =>
             <li key={store.id}>
-              <h2>
-                {store.address_line_1}
-              </h2>
               <p>
-                Distance: {store.distance_in_meters / 1000} km
+                <strong>{store.name}</strong>
+                <br />
+                {store.address_line_1} <br />
+                {store.telephone} <br />
+                Distance: {(store.distance_in_meters / 1000).toFixed(1)} km
+                <br />
+                <br />
               </p>
             </li>
           )
