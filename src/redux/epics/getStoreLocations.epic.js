@@ -8,7 +8,7 @@ import {
 
 import { LCBO_API_KEY, LCBO_BASE_URL } from "../constants";
 
-const productIDs = ids => ids.join(",");
+const productIDs = (ids=[]) => ids.join(",");
 
 export const getStoreLocations = (action$, _, { ajax }) =>
   action$
