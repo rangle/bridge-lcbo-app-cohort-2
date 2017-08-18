@@ -15,7 +15,7 @@ export const getStoreLocations = (action$, _, { ajax }) =>
     .ofType(STORE_LOCATION_ACTIONS.GET_STORES_BY_PRODUCT_IDS)
     .mergeMap(action => {
       return ajax(
-        `${LCBO_BASE_URL}stores?products=${productIDs(action.payload)}&lat=${action.payload.latLng
+        `${LCBO_BASE_URL}stores?products=${productIDs(action.payload.ids)}&lat=${action.payload.latLng
           .lat}&lon=${action.payload.latLng.lng}&access_key=${LCBO_API_KEY}`,
       );
     })

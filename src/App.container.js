@@ -1,7 +1,6 @@
 import App from "./App.js"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import getUserLocation from './utils/getUserLocation'
 
 import {
   openWishlistPanel,
@@ -41,7 +40,5 @@ const mapDispatchToProps = dispatch => {
     dispatch
   )
 }
-
-console.log(getUserLocation())
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
