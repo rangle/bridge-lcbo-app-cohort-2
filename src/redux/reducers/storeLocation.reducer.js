@@ -22,4 +22,4 @@ export const storeLocationReducer = (state = DEFAULT_STATE, action) => {
   }
 };
 
-export default storeLocationReducer;
+export default storeLocationReducer
