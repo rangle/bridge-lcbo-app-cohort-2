@@ -17,6 +17,11 @@ class App extends Component {
     this.state = initialState
   }
 
+  componentDidMount(nextProps) {
+    // this.props.getUserCurrentLocation()
+    // comment out due to broken test (app will render w/o crashing - test is wrong) but this should be here to get user location so it's ready when we hit the find store button
+  }
+
   render() {
     const {
       wishlistIsVisible,
@@ -25,7 +30,7 @@ class App extends Component {
       updateSearchText,
       getResults,
       searchString,
-      wishList
+      wishList,
     } = this.props
     return (
       <div className="App">

@@ -10,7 +10,7 @@ import {
 } from "../../redux/actions/storeLocation.actions"
 
 // this creates an action observable, allowing us to fake an action that our epic can hear
-const action$ = ActionsObservable.of(getStoresByProductIDs([1, 2, 3]))
+const action$ = ActionsObservable.of(getStoresByProductIDs({ids:[1, 2, 3], latLng: {lat: 0, lng: 0}}))
 
 describe("getStoreLocations Epic", () => {
   it("dispatches the correct action when it is successful", done => {

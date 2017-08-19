@@ -1,19 +1,25 @@
-import { STORE_LOCATION_ACTIONS } from "../actions/storeLocation.actions"
+import { STORE_LOCATION_ACTIONS } from "../actions/storeLocation.actions";
 
 const DEFAULT_STATE = {
-  storeList: []
-}
+  storeList: [],
+  latLng: { lat: 43.6532, lng: -79.3832 }, // same as TOR_LAT_LNG
+};
 
 export const storeLocationReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case STORE_LOCATION_ACTIONS.SEND_STORES_BY_PRODUCT_IDS:
       return {
         ...state,
-        storeList: action.payload
-      }
+        storeList: action.payload,
+      };
+    case STORE_LOCATION_ACTIONS.SET_USER_CURRENT_LOCATION:
+      return {
+        ...state,
+        latLng: action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default storeLocationReducer

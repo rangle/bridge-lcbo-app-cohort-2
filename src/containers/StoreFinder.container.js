@@ -3,29 +3,32 @@ import StoresList from "../components/StoresList"
 import LocationMap from "../components/LocationMap"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import { getStoresByProductIDs } from "../redux/actions/storeLocation.actions"
+import { getStoresByProductIDs, getUserCurrentLocation } from "../redux/actions/storeLocation.actions"
 import { Link } from "react-router"
 import "./StoreFinder.container.css"
 
-const StoreFinder = props =>
-  <div className="storeFinder-container">
+const StoreFinder = props => {
+  return (<div className="storeFinder-container">
     <Link className="link" to="/">
       &larr; go back
     </Link>
     <StoresList {...props} />
     <LocationMap {...props} />
-  </div>
+  </div>)
+}
 
 const mapStateToProps = state => {
   return {
-    storeList: state.storesList.storeList
+    storeList: state.storesList.storeList,
+    latLng: state.storesList.latLng
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      getStoresByProductIDs
+      getStoresByProductIDs,
+      getUserCurrentLocation,
     },
     dispatch
   )

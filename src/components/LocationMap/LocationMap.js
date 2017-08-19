@@ -1,40 +1,34 @@
-import { default as React, Component } from "react"
+import { default as React, Component } from "react";
 
-import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
-const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 } // Toronto lat/long coordinates
+const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 }; // Toronto lat/long coordinates
 
 const SimpleMap = withGoogleMap(props =>
-  <GoogleMap ref={props.onMapLoad} defaultZoom={14} defaultCenter={TOR_LAT_LNG}>
-    {props.stores.map(store =>
-      <Marker
-        position={{ lat: store.latitude, lng: store.longitude }}
-        key={store.id}
-      />
-    )}
-  </GoogleMap>
-)
+  <GoogleMap ref={res => props.onLoad(res)} defaultZoom={14} defaultCenter={TOR_LAT_LNG}>
+    {props.stores.length > 0 &&
+      props.stores.map(store =>
+        <Marker position={{ lat: store.latitude, lng: store.longitude }} key={store.id} />,
+      )}
+  </GoogleMap>,
+);
 
 export default class LocationMap extends Component {
+  componentDidMount(nextProps) {
+    this.props.getUserCurrentLocation();
+  }
 
-	//this functionality should be moved to an epic:
-	// componentDidMount(nextProps) {
-	// 	navigator.geolocation.getCurrentPosition(position => {
-	// 		const latLng = {
-	// 			lat: position.coords.latitude,
-	// 			lng: position.coords.longitude
-	// 		}
-
-	// 		this.mapLib.panTo(latLng)
-	// 	})
-	// }
-
+  componentWillReceiveProps() {
+    this.mapLib && this.props.latLng && this.mapLib.panTo(this.props.latLng);
+  }
 
   render() {
     return (
       <SimpleMap
         stores={this.props.storeList}
         onLoad={res => (this.mapLib = res)}
+        latLng={this.props.latLng}
+        getUserCurrentLocation={this.props.getUserCurrentLocation}
         containerElement={
           <div
             style={{
@@ -46,7 +40,7 @@ export default class LocationMap extends Component {
               right: 0,
               bottom: 0,
               justifyContent: "flex-end",
-              alignItems: "center"
+              alignItems: "center",
             }}
           />
         }
@@ -57,11 +51,11 @@ export default class LocationMap extends Component {
               top: 0,
               left: 0,
               right: 0,
-              bottom: 0
+              bottom: 0,
             }}
           />
         }
       />
-    )
+    );
   }
 }
