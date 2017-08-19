@@ -6,7 +6,6 @@ import productReducer from "./product.reducer"
 import storeLocationReducer from "./storeLocation.reducer"
 import combineReducers from "redux/es/combineReducers"
 
-
 export default combineReducers({
   routing: routerReducer,
   header: headerReducer,

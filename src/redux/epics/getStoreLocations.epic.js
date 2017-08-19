@@ -8,15 +8,15 @@ import {
 
 import { LCBO_API_KEY, LCBO_BASE_URL } from "../constants";
 
-const productIDs = (ids=[]) => ids.join(",");
+const productIDs = (ids = []) => ids.join(",");
 
 export const getStoreLocations = (action$, _, { ajax }) =>
   action$
     .ofType(STORE_LOCATION_ACTIONS.GET_STORES_BY_PRODUCT_IDS)
     .mergeMap(action => {
       return ajax(
-        `${LCBO_BASE_URL}stores?products=${productIDs(action.payload.ids)}&lat=${action.payload.latLng
-          .lat}&lon=${action.payload.latLng.lng}&access_key=${LCBO_API_KEY}`,
+        `${LCBO_BASE_URL}stores?products=${productIDs(action.payload.ids)}&lat=${action.payload
+          .latLng.lat}&lon=${action.payload.latLng.lng}&access_key=${LCBO_API_KEY}`,
       );
     })
     .map(({ response }) => {
@@ -25,8 +25,10 @@ export const getStoreLocations = (action$, _, { ajax }) =>
 
 function getPreciseLocation() {
   return new Promise(function(resolve, reject) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      resolve({ lat: position.coords.latitude, lng: position.coords.longitude });
+    navigator.geolocation.getCurrentPosition(position => {
+      position
+        ? resolve({ lat: position.coords.latitude, lng: position.coords.longitude })
+        : reject("no value for position");
     });
   });
 }

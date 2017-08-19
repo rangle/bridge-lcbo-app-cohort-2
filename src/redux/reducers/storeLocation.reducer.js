@@ -13,10 +13,6 @@ export const storeLocationReducer = (state = DEFAULT_STATE, action) => {
         storeList: action.payload,
       };
     case STORE_LOCATION_ACTIONS.SET_USER_CURRENT_LOCATION:
-      console.log({
-        ...state,
-        latLng: action.payload,
-      })
       return {
         ...state,
         latLng: action.payload,
