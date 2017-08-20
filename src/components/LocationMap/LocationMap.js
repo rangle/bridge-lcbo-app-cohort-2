@@ -34,9 +34,8 @@ export default class LocationMap extends Component {
             style={{
               position: "absolute",
               height: `100%`,
-              width: `70%`,
               top: 0,
-              left: `30em`,
+              left: `20em`,
               right: 0,
               bottom: 0,
               justifyContent: "flex-end",
