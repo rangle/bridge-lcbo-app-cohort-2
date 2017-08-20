@@ -1,0 +1,25 @@
+.store-list-wrapper h1 {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+.store-list-wrapper h2 {
+  font-size: 1em;
+  margin-bottom: 0px;
+}
+
+.store-list-wrapper li {
+  border-bottom: 1px solid;
+  width: 280px;
+}
+
+.store-list-wrapper ul {
+  width: 300px;
+  padding: 0 20px;
+}
+
+.store-list-wrapper p {
+  margin: 0px;
+}

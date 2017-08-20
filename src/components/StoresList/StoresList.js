@@ -9,9 +9,10 @@ const StoresList = props => {
       props.storeList.length > 0
         ? props.storeList.map(store =>
             <li key={store.id}>
+              <h2>
+                {store.name}
+              </h2>
               <p>
-                <strong>{store.name}</strong>
-                <br />
                 {store.address_line_1} <br />
                 {store.telephone} <br />
                 Distance: {(store.distance_in_meters / 1000).toFixed(1)} km
@@ -26,9 +27,12 @@ const StoresList = props => {
   }
 
   return (
-    <ul>
-      {store}
-    </ul>
+    <div className="store-list-wrapper">
+      <h1>Stores</h1>
+      <ul>
+        {store}
+      </ul>
+    </div>
   )
 }
 
