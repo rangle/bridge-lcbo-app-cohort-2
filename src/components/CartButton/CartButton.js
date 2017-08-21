@@ -1,6 +1,6 @@
-import React from "react";
-import "./CartButton.css";
-import { CSSTransitionGroup } from "react-transition-group";
+import React from "react"
+import "./CartButton.css"
+import { CSSTransitionGroup } from "react-transition-group"
 
 const CartButton = props => {
   return (
