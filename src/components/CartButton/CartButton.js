@@ -12,7 +12,7 @@ const CartButton = props => {
       transitionLeaveTimeout={800}
       onClick={() => props.onClick()}
     >
-      <span key={props.wishList.length}>
+      <span key={(props.wishList && props.wishList.length) || 0}>
         <div>
           {(props.wishList && props.wishList.length) > 0
             ? <div className="red-badge">
