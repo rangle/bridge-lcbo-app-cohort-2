@@ -1,35 +1,21 @@
 import React from "react"
 import "./StoresList.css"
+import { msmTo24time, msmTo12time } from "../../helpers/time.helpers.js"
 
 const StoresList = props => {
   let store
   const date = new Date()
-  const weekday = new Array(7)
-  weekday[0] = "sunday"
-  weekday[1] = "monday"
-  weekday[2] = "tuesday"
-  weekday[3] = "wednesday"
-  weekday[4] = "thursday"
-  weekday[5] = "friday"
-  weekday[6] = "saturday"
+  const weekday = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday"
+  ]
+
   const today = weekday[date.getDay()]
-
-  function msmTo24time(msm) {
-    const hour = msm / 60
-    const mins = msm % 60
-
-    return [hour, mins]
-  }
-
-  function msmTo12time(msm) {
-    const time = msmTo24time(msm)
-    const h24 = time[0]
-    const h12 = 0 === h24 ? 12 : h24 > 12 ? h24 - 10 - 2 : h24
-    const ampm = h24 >= 12 ? "PM" : "AM"
-    const twoDigitMin = time[1] < 10 ? `:${time[1]}0` : `:${time[1]}`
-
-    return [h12, twoDigitMin, ampm]
-  }
 
   if (props.storeList) {
     store =
