@@ -25,4 +25,4 @@ const CartButton = props => {
   );
 };
 
-export default CartButton;
+export default CartButton
