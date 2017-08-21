@@ -1,6 +1,6 @@
 import React from "react"
 import "./StoresList.css"
-import { msmTo24time, msmTo12time } from "../../helpers/time.helpers.js"
+import { msmTo12time } from "../../helpers/time.helpers.js"
 
 const StoresList = props => {
   let store
