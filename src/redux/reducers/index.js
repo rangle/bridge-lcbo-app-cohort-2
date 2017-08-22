@@ -1,5 +1,6 @@
 import { routerReducer } from "react-router-redux"
 import { wishlistIsVisible } from "./wishlist.reducer"
+import { mapDialogIsVisible } from "./mapDialog.reducer"
 
 import headerReducer from "./header.reducer"
 import productReducer from "./product.reducer"
@@ -11,5 +12,6 @@ export default combineReducers({
   header: headerReducer,
   product: productReducer,
   storesList: storeLocationReducer,
-  wishlistIsVisible: wishlistIsVisible
+  wishlistIsVisible: wishlistIsVisible,
+  mapDialogIsVisible: mapDialogIsVisible
 })

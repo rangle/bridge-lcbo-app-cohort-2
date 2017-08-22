@@ -1,25 +1,32 @@
-import { default as React, Component } from "react";
+import { default as React, Component } from "react"
 
-import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 }; // Toronto lat/long coordinates
+const TOR_LAT_LNG = { lat: 43.6532, lng: -79.3832 } // Toronto lat/long coordinates
 
 const SimpleMap = withGoogleMap(props =>
-  <GoogleMap ref={res => props.onLoad(res)} defaultZoom={14} defaultCenter={TOR_LAT_LNG}>
+  <GoogleMap
+    ref={res => props.onLoad(res)}
+    defaultZoom={14}
+    defaultCenter={TOR_LAT_LNG}
+  >
     {props.stores.length > 0 &&
       props.stores.map(store =>
-        <Marker position={{ lat: store.latitude, lng: store.longitude }} key={store.id} />,
+        <Marker
+          position={{ lat: store.latitude, lng: store.longitude }}
+          key={store.id}
+        />
       )}
-  </GoogleMap>,
-);
+  </GoogleMap>
+)
 
 export default class LocationMap extends Component {
-  componentDidMount(nextProps) {
-    this.props.getUserCurrentLocation();
+  componentDidMount() {
+    this.props.getUserCurrentLocation()
   }
 
-  componentWillReceiveProps() {
-    this.mapLib && this.props.latLng && this.mapLib.panTo(this.props.latLng);
+  componentWillReceiveProps(nextProps) {
+    this.mapLib && this.props.latLng && this.mapLib.panTo(this.props.latLng)
   }
 
   render() {
@@ -39,7 +46,7 @@ export default class LocationMap extends Component {
               right: 0,
               bottom: 0,
               justifyContent: "flex-end",
-              alignItems: "center",
+              alignItems: "center"
             }}
           />
         }
@@ -50,11 +57,11 @@ export default class LocationMap extends Component {
               top: 0,
               left: 0,
               right: 0,
-              bottom: 0,
+              bottom: 0
             }}
           />
         }
       />
-    );
+    )
   }
 }

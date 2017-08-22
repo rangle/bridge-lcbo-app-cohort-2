@@ -1,26 +1,47 @@
-import React from "react"
+import React, { Component } from "react"
 import StoresList from "../components/StoresList"
 import LocationMap from "../components/LocationMap"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import { getStoresByProductIDs, getUserCurrentLocation } from "../redux/actions/storeLocation.actions"
-import { Link } from "react-router"
+import {
+  getStoresByProductIDs,
+  getUserCurrentLocation
+} from "../redux/actions/storeLocation.actions"
+import {
+  closeMapDialog,
+  showMapDialog
+} from "../redux/actions/mapDialog.actions"
+
+import MapDialog from "../components/MapDialog"
 import "./StoreFinder.container.css"
 
-const StoreFinder = props => {
-  return (<div className="storeFinder-container">
-    <Link className="link" to="/">
-      &larr; go back
-    </Link>
-    <StoresList {...props} />
-    <LocationMap {...props} />
-  </div>)
+class StoreFinder extends Component {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps !== this.props) {
+      if (nextProps.storeList.length === 0) {
+        this.props.showMapDialog()
+      }
+    }
+  }
+
+  render() {
+    return (
+      <div className="storeFinder-container">
+        <MapDialog {...this.props} />
+        <StoresList {...this.props} />
+        <LocationMap {...this.props} />
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
   return {
     storeList: state.storesList.storeList,
-    latLng: state.storesList.latLng
+    latLng: state.storesList.latLng,
+    mapDialogIsVisible: state.mapDialogIsVisible,
+    closeMapDialog: state.closeMapDialog,
+    showMapDialog: state.showMapDialog
   }
 }
 
@@ -29,6 +50,8 @@ const mapDispatchToProps = dispatch => {
     {
       getStoresByProductIDs,
       getUserCurrentLocation,
+      closeMapDialog,
+      showMapDialog
     },
     dispatch
   )
