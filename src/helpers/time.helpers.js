@@ -1,5 +1,5 @@
 export function msmTo24time(msm) {
-  const hour = msm / 60
+  const hour = Math.floor(msm / 60)
   const mins = msm % 60
 
   return [hour, mins]
