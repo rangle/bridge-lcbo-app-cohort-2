@@ -8,12 +8,13 @@
 
 .store-list-wrapper h2 {
   font-size: 1em;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .store-list-wrapper li {
   border-bottom: 1px solid;
   width: 280px;
+  padding: 10px 0;
 }
 
 .store-list-wrapper ul {
