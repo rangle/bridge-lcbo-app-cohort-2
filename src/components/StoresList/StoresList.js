@@ -1,8 +1,21 @@
 import React from "react"
 import "./StoresList.css"
+import { msmTo12time } from "../../helpers/time.helpers.js"
 
 const StoresList = props => {
   let store
+  const date = new Date()
+  const weekday = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday"
+  ]
+
+  const today = weekday[date.getDay()]
 
   if (props.storeList) {
     store =
@@ -17,6 +30,8 @@ const StoresList = props => {
                 {store.telephone} <br />
                 Distance: {(store.distance_in_meters / 1000).toFixed(1)} km
                 <br />
+                Open: {msmTo12time(store[`${today}_open`])} -{" "}
+                {msmTo12time(store[`${today}_close`])}
                 <br />
               </p>
             </li>
