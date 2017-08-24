@@ -7,7 +7,7 @@ const Header = props => {
   return (
     <div className="header">
       <div className="title">
-        <h1>LCBO App Title</h1>
+        <h1>Pour Decisions</h1>
       </div>
       <CartButton
         wishList={props.wishList}
