@@ -23,30 +23,10 @@ class App extends Component {
   }
 
   render() {
-    const {
-      wishlistIsVisible,
-      onClickClosePanel,
-      onClickShoppingCartLogo,
-      updateSearchText,
-      getResults,
-      searchString,
-      wishList,
-    } = this.props
     return (
       <div className="App">
-        <Header
-          {...this.props}
-          onClickShoppingCartLogo={onClickShoppingCartLogo}
-          wishList={wishList}
-          getResults={getResults}
-          updateSearchText={updateSearchText}
-          searchString={searchString}
-        />
-        <WishlistPanel
-          {...this.props}
-          wishlistIsVisible={wishlistIsVisible}
-          onClickClosePanel={onClickClosePanel}
-        />
+        <Header {...this.props} />
+        <WishlistPanel {...this.props} />
         <ProductList {...this.props} />
       </div>
     )
